@@ -1,0 +1,181 @@
+:root {
+  --blue: #000648;
+  --green: #00aa4e;
+  --white: #fff;
+  --dark: #111;
+  --grey: #4d4d4d;
+}
+
+body {
+  font-family: "Poppins", system-ui;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--grey);
+
+  @media (max-width: $forTablet) {
+    font-size: 16px;
+  }
+}
+
+content-container {
+  display: block;
+  max-width: $forTablet;
+  padding: 0 20px;
+  margin: 0 auto;
+
+  @media (max-width: $forTablet) {
+    max-width: $forMobile;
+  }
+
+  @media (max-width: $forMobile) {
+    max-width: $minimum;
+  }
+}
+
+section {
+  padding: 70px 0;
+
+  @media (max-width: $forTablet) {
+    padding: 60px 0;
+  }
+
+  @media (max-width: $forMobile) {
+    padding: 50px 0;
+  }
+}
+
+hgroup {
+  text-align: center;
+  margin-bottom: 60px;
+
+  @media (max-width: $forTablet) {
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: $forMobile) {
+    margin-bottom: 40px;
+  }
+}
+
+.button {
+  display: inline-block;
+  border-radius: 100px;
+  padding: 14px 32px;
+  border: 1px solid transparent;
+
+  font-weight: 600;
+  font-size: 14px;
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.button-gradient {
+  color: var(--white);
+  background: linear-gradient(135deg, #00904d 0%, #003d4a 100%);
+
+  &:hover {
+    background: linear-gradient(135deg, #003d4a 0%, #00904d 100%);
+  }
+}
+
+.button-white {
+  color: var(--blue);
+  background-color: var(--white);
+
+  &:hover {
+    background-color: var(--blue);
+    border-color: var(--blue);
+    color: var(--white);
+  }
+}
+
+.button-outline {
+  color: var(--white);
+  border-color: var(--white);
+
+  &:hover {
+    background-color: var(--white);
+    color: var(--blue);
+  }
+}
+
+h1,
+.h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 120%;
+
+  @media (max-width: $forTablet) {
+    font-size: 38px;
+  }
+
+  @media (max-width: $forMobile) {
+    font-size: 28px;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 120%;
+  color: var(--dark);
+
+  @media (max-width: $forTablet) {
+    font-size: 28px;
+  }
+
+  @media (max-width: $forMobile) {
+    font-size: 22px;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 120%;
+  color: var(--dark);
+
+  @media (max-width: $forTablet) {
+    font-size: 24px;
+  }
+
+  @media (max-width: $forMobile) {
+    font-size: 20px;
+  }
+}
+
+h4,
+.h4 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 120%;
+  color: var(--dark);
+
+  @media (max-width: $forTablet) {
+    font-size: 16px;
+  }
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 14px 24px;
+  background-color: unset;
+  border-radius: 100px;
+
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+
+  border: 1px solid var(--dark);
+
+  &::placeholder {
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0.7;
+  }
+}

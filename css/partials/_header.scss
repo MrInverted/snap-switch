@@ -1,0 +1,58 @@
+.header {
+  padding-top: 30px;
+  padding-bottom: 40px;
+
+  font-size: 16px;
+  color: var(--dark);
+
+  &__content {}
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+
+    @media (max-width: $forMobile) {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  &__left {
+    a:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+
+      @media (max-width: $forMobile) {
+        gap: 20px;
+      }
+    }
+
+    li a {
+      display: block;
+    }
+
+    li a:hover {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    @media (max-width: $forMobile) {
+      .button {
+        display: none;
+      }
+    }
+  }
+}

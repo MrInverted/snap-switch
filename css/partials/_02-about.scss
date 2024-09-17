@@ -1,0 +1,81 @@
+.about {
+
+  &__content {
+    dl {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    dt {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    dt:before {
+      content: "";
+      flex-shrink: 0;
+      display: block;
+      width: 34px;
+      height: 16px;
+
+      background-image: url("/img/switcher.svg");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    br {
+      content: "";
+      display: block;
+      height: 8px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+
+    @media (max-width: $forMobile) {
+      flex-direction: column;
+    }
+  }
+
+  &__text {
+    flex: 0 1 580px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @media (max-width: $forMobile) {
+      gap: 20px;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @media (max-width: $forMobile) {
+      gap: 20px;
+    }
+  }
+
+  &__image {
+    flex: 0 1 480px;
+
+    img {
+      border-radius: 10px;
+    }
+  }
+}

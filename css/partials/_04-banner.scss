@@ -1,0 +1,70 @@
+.banner {
+
+  &__content {
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    padding: 80px 100px;
+
+    h2,
+    p {
+      color: var(--white);
+    }
+
+    @media (max-width: $forTablet) {
+      padding: 80px 60px;
+    }
+
+    @media (max-width: $forMobile) {
+      padding: 60px 20px;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    max-width: 715px;
+    margin-bottom: 40px;
+
+    @media (max-width: $forMobile) {
+      text-align: center;
+    }
+  }
+
+  &__form {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    max-width: 715px;
+
+    @media (max-width: $forMobile) {
+      flex-direction: column;
+
+      button {
+        width: 100%;
+      }
+    }
+
+    input {
+      border: 1px solid var(--white);
+      color: var(--white);
+
+      &::placeholder {
+        color: var(--white);
+      }
+    }
+
+    input:not(:focus):hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    button {
+      flex-shrink: 0;
+    }
+  }
+}
