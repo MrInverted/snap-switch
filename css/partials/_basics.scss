@@ -32,6 +32,12 @@ content-container {
   }
 }
 
+hidden-content {
+  display: block;
+  min-height: 0;
+  overflow: hidden;
+}
+
 section {
   padding: 70px 0;
 

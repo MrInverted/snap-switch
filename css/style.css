@@ -146,6 +146,12 @@ content-container {
   }
 }
 
+hidden-content {
+  display: block;
+  min-height: 0;
+  overflow: hidden;
+}
+
 section {
   padding: 70px 0;
 }
@@ -315,15 +321,20 @@ input::placeholder {
   font-size: 16px;
   color: var(--dark);
 }
+@media (max-width: 768px) {
+  .header {
+    padding: 20px 0;
+  }
+}
 .header__row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 40px;
+  position: relative;
 }
 @media (max-width: 768px) {
   .header__row {
-    flex-direction: column;
     gap: 20px;
   }
 }
@@ -331,31 +342,78 @@ input::placeholder {
   opacity: 0.7;
 }
 .header__right {
+  display: grid;
+  transition: 0.6s;
+}
+@media (max-width: 768px) {
+  .header__right {
+    position: absolute;
+    top: 100%;
+    left: -5px;
+    right: -5px;
+    grid-template-rows: 0fr;
+  }
+}
+@media (max-width: 768px) {
+  .header__right.opened {
+    grid-template-rows: 1fr;
+  }
+}
+.header__right-row {
   display: flex;
   align-items: center;
   gap: 40px;
 }
-.header__right ul {
+.header__right-row ul {
   display: flex;
   align-items: center;
   gap: 40px;
 }
 @media (max-width: 768px) {
-  .header__right ul {
+  .header__right-row ul {
+    flex-direction: column;
     gap: 20px;
   }
 }
-.header__right li a {
+.header__right-row li a {
   display: block;
 }
-.header__right li a:hover {
+.header__right-row li a:hover {
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 @media (max-width: 768px) {
-  .header__right .button {
+  .header__right-row {
+    background-color: var(--white);
+    flex-direction: column;
+    padding: 60px 0;
+  }
+}
+.header__burger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+@media (min-width: 768px) {
+  .header__burger {
     display: none;
   }
+}
+
+.header__burger img[src$="opened.svg"] {
+  display: none;
+}
+.header__burger img[src$="closed.svg"] {
+  display: block;
+}
+
+.header__burger.opened img[src$="opened.svg"] {
+  display: block;
+}
+.header__burger.opened img[src$="closed.svg"] {
+  display: none;
 }
 
 .footer {
@@ -564,6 +622,7 @@ input::placeholder {
 }
 .intro__right {
   align-self: end;
+  max-width: 356px;
 }
 @media (max-width: 1220px) {
   .intro__right {

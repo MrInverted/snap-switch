@@ -18,6 +18,28 @@ try {
     }
   })
 } catch (error) {
-  console.warn(error)
+  console.warn(error);
 }
 
+
+try {
+  const icon = document.querySelector(".header__burger");
+  const menu = document.querySelector(".header__right");
+  const links = document.querySelectorAll(".header__right a");
+
+  const closeBurger = () => {
+    menu.classList.remove("opened");
+    icon.classList.remove("opened");
+  }
+
+  icon.onclick = () => {
+    menu.classList.toggle("opened");
+    icon.classList.toggle("opened");
+  }
+
+  links.forEach(link => {
+    link.onclick = () => closeBurger();
+  })
+} catch (error) {
+  console.warn(error);
+}

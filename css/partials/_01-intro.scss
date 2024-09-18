@@ -103,6 +103,7 @@
 
   &__right {
     align-self: end;
+    max-width: 356px;
 
     @media (max-width: $forTablet) {
       align-self: unset;
